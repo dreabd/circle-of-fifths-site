@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './components/HomePage/HomePage'
+import Navbar from './components/Navbar/Navbar'
+
+import { toby } from './exampleUser'
 
 function App() {
   return (
     <>
-      <h1>This is the page</h1>
+      <Navbar user={toby}/>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/announcements" element="Announcements"/>
+        <Route exact path="/announcements" element="Announcements" />
       </Routes>
     </>
   )
