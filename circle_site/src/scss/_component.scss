@@ -1,63 +1,106 @@
+// Mixin for centering elements
 @mixin center-component {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
+// Define animations
+@keyframes slideIn {
+    from {
+        left: -300px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+// Styles for the .navbar component
 .navbar {
     @include center-component;
     background-color: $panel-color;
     color: $text-color;
-    border-radius: 1rem;
-    gap: 2rem;
-    padding: 3rem 1rem;
-    margin:1rem 1rem;
-    max-width: 20rem;
+    border-radius: $border-radius;
+    gap: 5rem;
+    margin: 1rem 1rem;
+    padding: 2rem 4rem;
+    width: 20rem;
+    height: 95%;
+    position: absolute;
+    animation-name: none;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    font-size: $font-size-lg;
 
-    .user-profile > img{
-        width: 100px;
-        height: 100px; 
+    // Apply slideIn animation when the navbar is open
+    &.open {
+        animation-name: slideIn;
+    }
+
+    .user-profile>img {
+        width: 150px;
+        height: 150px;
         object-fit: cover;
         overflow: hidden;
         border-radius: 1000px;
     }
 
-    .user-profile{
-        size: 2rem
+    .user-profile {
+        @include center-component;
     }
 
-    .user-profile{
-        @include center-component;
-    }
     .navlinks {
         @include center-component;
+        margin-top: 1rem ;
         align-items: baseline;
+        padding: 0px;
         gap: 10px;
+        font-size: $font-size-reg;
+
     }
 
     .navlinks>* {
         color: $text-color;
         text-decoration: none;
     }
-    .active{
-        color:$accent-color;
-        font-weight: bold;
-    }
-    
-    .navlinks :hover{
+
+    .active {
         color: $accent-color;
         font-weight: bold;
     }
-    .close-button{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
+
+    .navlinks>*:hover {
+        color: $accent-color;
+        font-weight: bold;
     }
 
+    .close-button {
+        position: absolute;
+        top: 365px;
+        left: 295px;
+        border-radius: 20rem;
+        border: none;
+        padding: 7px 20px;
+        cursor: pointer;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+
+        // Apply close-slide animation when the navbar is open
+        &.close-slide {
+            top: 365px;
+            left: 0px;
+            animation-name: slideIn;
+        }
+    }
+
+
+}
+
+.close {
+    padding: 0;
+    margin: 0;
+    left: 10;
+    height: 0;
 }
