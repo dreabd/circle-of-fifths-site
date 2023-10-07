@@ -1,9 +1,19 @@
+@use 'sass:math';
+
 // Mixin for centering elements
 @mixin center-component {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@mixin profile-images {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 1000px;
 }
 
 // Define animations
@@ -40,11 +50,7 @@
     }
 
     .user-profile>img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        overflow: hidden;
-        border-radius: 1000px;
+        @include profile-images()
     }
 
     .user-profile {
@@ -53,7 +59,7 @@
 
     .navlinks {
         @include center-component;
-        margin-top: 1rem ;
+        margin-top: 1rem;
         align-items: baseline;
         padding: 0px;
         gap: 10px;
@@ -103,4 +109,8 @@
     margin: 0;
     left: 10;
     height: 0;
+}
+
+.profile-img {
+    @include profile-images()
 }
