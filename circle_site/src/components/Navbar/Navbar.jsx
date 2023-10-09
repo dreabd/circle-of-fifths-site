@@ -14,7 +14,7 @@ function Navbar({ user }) {
                 <i style={{ color: "white" }} className={`${display ? "fa-solid fa-chevron-left" : "fa-solid fa-chevron-right"}`}></i>
             </button>
             {display &&
-                <div>
+                <div className="user-container">
                     <div className="user-profile">
                         <img src={user.pfp} alt="userPfp" />
                         <p>Welcome, {user.firstName}</p>

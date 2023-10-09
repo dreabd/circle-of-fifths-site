@@ -1,5 +1,5 @@
 // Mixin for centering elements
-@mixin center-component {
+%center-component {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,14 +19,12 @@
 
 // Styles for the .navbar component
 .navbar {
-    @include center-component;
+    @extend %center-component;
     background-color: $panel-color;
     color: $text-color;
     border-radius: $border-radius;
-    gap: 5rem;
     margin: 1rem 1rem;
     padding: 2rem 4rem;
-    width: 20rem;
     height: 95%;
     position: absolute;
     animation-name: none;
@@ -41,24 +39,24 @@
 
     // Apply slideIn animation when the navbar is open
     &.close {
-        animation-name: slideOut;
+        left: px;
     }
 
     .user-profile>img {
-        width: 150px;
+        max-width: 150px;
         height: 150px;
         object-fit: cover;
         overflow: hidden;
-        border-radius: 1000px;
+        border-radius: 100%;
     }
 
     .user-profile {
-        @include center-component;
+        @extend %center-component;
     }
 
     .navlinks {
-        @include center-component;
-        margin-top: 1rem ;
+        @extend %center-component;
+        margin-top: 1rem;
         align-items: baseline;
         padding: 0px;
         gap: 10px;
@@ -98,6 +96,7 @@
             left: 0px;
             animation-name: slideIn;
         }
+
         // Apply close-slide animation when the navbar is open
         &.open-slide {
             top: 365px;
