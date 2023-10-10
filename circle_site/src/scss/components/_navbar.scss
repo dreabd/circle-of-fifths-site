@@ -26,7 +26,6 @@
     margin: 1rem 1rem;
     padding: 2rem 4rem;
     height: 95%;
-    position: absolute;
     animation-name: none;
     animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
@@ -40,6 +39,14 @@
     // Apply slideIn animation when the navbar is open
     &.close {
         left: px;
+    }
+
+    .user-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        gap: 1rem;
     }
 
     .user-profile>img {
@@ -81,8 +88,6 @@
 
     .close-button {
         position: absolute;
-        top: 365px;
-        left: 295px;
         border-radius: 20rem;
         border: none;
         padding: 7px 20px;
@@ -92,15 +97,15 @@
 
         // Apply close-slide animation when the navbar is open
         &.close-slide {
-            top: 365px;
+            top: 465px;
             left: 0px;
             animation-name: slideIn;
         }
 
         // Apply close-slide animation when the navbar is open
         &.open-slide {
-            top: 365px;
-            left: 295px;
+            top: 465px;
+            left: 305px;
             animation-name: slideOut;
         }
     }
