@@ -6,6 +6,7 @@
     align-items: center;
 }
 
+
 // Define animations
 @keyframes slideIn {
     from {
@@ -17,28 +18,40 @@
     }
 }
 
+@keyframes slideOut {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -265px;
+    }
+}
+
 // Styles for the .navbar component
 .navbar {
     @extend %center-component;
-    background-color: $panel-color;
-    color: $text-color;
-    border-radius: $border-radius;
-    margin: 1rem 1rem;
-    padding: 2rem 4rem;
-    height: 95%;
-    animation-name: none;
     animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
-    font-size: $font-size-lg;
 
-    // Apply slideIn animation when the navbar is open
-    &.open {
-        animation-name: slideIn;
-    }
+    // **************************************
+    // SlideIN only works w/ Postion Absolute but we dont want that so will adjust later 
+    // &.open {
+    //     animation-name: slideIn;
+    //     height: 100%;
+    //     position: absolute;
+    //     animation-duration: 0.3s;
+    // }
+    // **************************************
 
-    // Apply slideIn animation when the navbar is open
+
+    // Apply SlideOut animation when the navbar is Closed
     &.close {
-        left: px;
+        animation-name: slideOut;
+        left: -325px;
+        position: absolute;
+        height: 100%;
+        animation-duration: 0.3s;
     }
 
     .user-container {
@@ -47,6 +60,13 @@
         justify-content: center;
         height: 100%;
         gap: 1rem;
+        background-color: $panel-color;
+        color: $text-color;
+        border-radius: $border-radius;
+        margin: 1rem 1rem;
+        padding: 2rem 4rem;
+        height: 95%;
+        font-size: $font-size-lg;
     }
 
     .user-profile>img {
@@ -87,35 +107,29 @@
     }
 
     .close-button {
+        font-size: $font-size-lg;
         position: absolute;
         border-radius: 20rem;
+        background-color: $panel-color;
+        color: $text-color;
+        border-radius: $border-radius;
         border: none;
+        top: 465px;
+        left: 265px;
         padding: 7px 20px;
         cursor: pointer;
-        animation-duration: 0.3s;
-        animation-timing-function: ease-in-out;
 
         // Apply close-slide animation when the navbar is open
         &.close-slide {
-            top: 465px;
-            left: 0px;
-            animation-name: slideIn;
+            animation-name: slideOut;
+            left: 310px;
         }
 
         // Apply close-slide animation when the navbar is open
         &.open-slide {
-            top: 465px;
-            left: 305px;
-            animation-name: slideOut;
+            animation-name: slideIn;
         }
     }
 
 
-}
-
-.close {
-    padding: 0;
-    margin: 0;
-    left: 10;
-    height: 0;
 }

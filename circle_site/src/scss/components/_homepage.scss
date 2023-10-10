@@ -1,2 +1,13 @@
-// .homepage{
-// }
+
+.homepage{
+    @extend %center-component;
+    height: 100%;
+    width: 100%;
+    border: $test-components;
+
+    .styled-calendar-container{
+        width: 95%;
+        height: 70%;
+        border: $test-components;
+    }
+}
