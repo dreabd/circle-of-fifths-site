@@ -35,7 +35,7 @@
     animation-timing-function: ease-in-out;
 
     // **************************************
-    // SlideIN only works w/ Postion Absolute but we dont want that so will adjust later 
+    // SlideIN only works w/ Postion Absolute but we dont want that so will adjust later
     &.open {
         animation-name: slideIn;
         // height: 100%;
@@ -114,7 +114,7 @@
         color: $text-color;
         border-radius: $border-radius;
         border: none;
-        top: 465px;
+        top: 50vh;
         left: 265px;
         padding: 7px 20px;
         cursor: pointer;

@@ -5,5 +5,5 @@ export let toby ={
     "section":"B1",
     "email":"tnguyen@uci.edu",
     "phone":"7142642490",
-    "pfp":"./public/toby_pfp.jpg",
+    "pfp":"./toby_pfp.jpg",
   }
