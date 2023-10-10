@@ -36,12 +36,12 @@
 
     // **************************************
     // SlideIN only works w/ Postion Absolute but we dont want that so will adjust later 
-    // &.open {
-    //     animation-name: slideIn;
-    //     height: 100%;
-    //     position: absolute;
-    //     animation-duration: 0.3s;
-    // }
+    &.open {
+        animation-name: slideIn;
+        // height: 100%;
+        // position: absolute;
+        // animation-duration: 0.3s;
+    }
     // **************************************
 
 
