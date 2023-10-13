@@ -1,8 +1,12 @@
-
-.homepage{
+.homepage {
     @extend %center-component;
+    width: $full-width;
     height: $full-height;
-    width: $partial-full-width;
-    // border: $test-components;
-
 }
+
+@media (max-width: 1024px) {
+    .homepage {
+        width: 75%;
+    }
+}
+

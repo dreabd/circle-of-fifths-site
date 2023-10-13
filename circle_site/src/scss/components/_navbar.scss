@@ -1,24 +1,5 @@
-
 // Define animations
-@keyframes slideIn {
-    from {
-        left: -300px;
-    }
 
-    to {
-        left: 0;
-    }
-}
-
-@keyframes slideOut {
-    from {
-        left: 0;
-    }
-
-    to {
-        left: -265px;
-    }
-}
 
 // Styles for the .navbar component
 .navbar {
@@ -28,18 +9,16 @@
 
     // **************************************
     // SlideIN only works w/ Postion Absolute but we dont want that so will adjust later
-    &.open {
-        animation-name: slideIn;
-        // height: 100%;
-        // position: absolute;
-        // animation-duration: 0.3s;
-    }
+    // &.open {
+    //     animation:$slideIn-animation;
+    // }
+
     // **************************************
 
 
     // Apply SlideOut animation when the navbar is Closed
     &.close {
-        animation-name: slideOut;
+        animation: $slideOut-animation;
         left: -325px;
         position: absolute;
         height: 100%;
@@ -55,17 +34,13 @@
         background-color: $panel-color;
         color: $text-color;
         border-radius: $border-radius;
-        margin: 1rem 1rem;
-        padding: 2rem 4rem;
+        margin: 1vh 0rem;
+        padding: 2vh 7vh;
         font-size: $font-size-lg;
     }
 
     .user-profile>img {
-        max-width: 150px;
-        height: 150px;
-        object-fit: cover;
-        overflow: hidden;
-        border-radius: 100%;
+        @extend %image-dim;
     }
 
     .user-profile {
@@ -96,31 +71,11 @@
         color: $accent-color;
         font-weight: bold;
     }
+}
 
-    .close-button {
-        font-size: $font-size-lg;
+
+@media (max-width:768) {
+    .user-container{
         position: absolute;
-        border-radius: 20rem;
-        background-color: $panel-color;
-        color: $text-color;
-        border-radius: $border-radius;
-        border: none;
-        top: 50vh;
-        left: 265px;
-        padding: 7px 20px;
-        cursor: pointer;
-
-        // Apply close-slide animation when the navbar is open
-        &.close-slide {
-            animation-name: slideOut;
-            left: 310px;
-        }
-
-        // Apply close-slide animation when the navbar is open
-        &.open-slide {
-            animation-name: slideIn;
-        }
-    }
-
-
+    }    
 }

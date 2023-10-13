@@ -28,6 +28,14 @@ $quarter-height:$full-height * .25;
 $partial-full-width: $full-width * .95;
 $partial-full-height:$full-height * .95;
 
+%image-dim{
+  max-width: 10vw;
+  max-height: 10vh;
+  border-radius: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
 // Mixin for centering elements
 %center-component {
   display: flex;
@@ -35,3 +43,28 @@ $partial-full-height:$full-height * .95;
   justify-content: center;
   align-items: center;
 }
+
+
+// Animations
+@keyframes slideIn {
+  from {
+      left: -300px;
+  }
+
+  to {
+      left: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+      left: 0;
+  }
+
+  to {
+      left: -265px;
+  }
+}
+
+$slideOut-animation: slideOut .3s ease-in-out;
+$slideIn-animation: slideIn .3s ease-in-out;
