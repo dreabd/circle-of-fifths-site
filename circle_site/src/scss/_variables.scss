@@ -13,7 +13,25 @@ $test-components: 1px solid red;
 $border-radius: 2rem;
 
 // Font Sizes
-$font-size-reg: 20px;
+$font-size-reg: 1.0vw;
 $font-size-sml: $font-size-reg *.5;
 $font-size-lg: $font-size-reg * 1.5;
 $font-size-xlg: $font-size-reg * 2;
+
+// Dimesions
+$full-height:100%;
+$full-width:100%;
+$half-width: $full-width * .5;
+$half-height:$full-height * .5;
+$quarter-width: $full-width * .25;
+$quarter-height:$full-height * .25;
+$partial-full-width: $full-width * .95;
+$partial-full-height:$full-height * .95;
+
+// Mixin for centering elements
+%center-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

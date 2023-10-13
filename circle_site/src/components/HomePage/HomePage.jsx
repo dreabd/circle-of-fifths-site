@@ -1,11 +1,13 @@
 
-import AnnoucementsCarousel from "./Annoucements"
+import AnnoucementsCarousel from "../Announcements/Carousel"
+import Calendar from "../Calendar/Calendar"
+
 function HomePage() {
     return (
         <div className="homepage">
-            <h1>This is HomePage</h1>
-            <AnnoucementsCarousel/>
-            <iframe src="https://embed.styledcalendar.com/#QKPYSeHdKaqs3xz1Ni1x" title="Styled Calendar" className="styled-calendar-container" data-cy="calendar-embed-iframe"></iframe>        </div>
+            <AnnoucementsCarousel />
+            < Calendar/>
+        </div>
     )
 }
 

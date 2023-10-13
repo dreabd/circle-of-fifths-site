@@ -1,0 +1,56 @@
+.carousel {
+  @extend %center-component;
+  width: $partial-full-width;
+
+  .profile-img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .ax-slide {
+    padding: 2rem 2rem;
+    display: flex;
+    background-color: $panel-color;
+    gap: 1rem;
+    width: $half-width;
+    border-radius: 40px;
+
+  }
+
+  .ax-slide:nth-child(1) {
+    display: flex;
+    align-items: center;
+    width: $full-width;
+    height: $full-height;
+  }
+
+  .ax-info-container {
+    font-size: $font-size-reg;
+    display: flex;
+    width: $partial-full-width;
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .top-ax-info {
+    width: $full-width;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-ax-info>p:nth-child(1) {
+    font-weight: bold;
+  }
+
+  p:nth-child(2) {
+    font-size: $font-size-reg;
+  }
+
+  .bot-ax-info > p{
+    display: flex;
+    justify-content: flex-start;
+  }
+}

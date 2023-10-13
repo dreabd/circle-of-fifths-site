@@ -7,7 +7,7 @@ export let announcements = [
       "first_name": "Anthony",
       "last_name": "Wong",
       "isAdmin": true,
-      "pfp": "../../public/anthony_pfp.jpg",
+      "pfp": "./anthony_pfp.jpg",
       "section": "BS",
       "email": "awong@uci.edu",
       "phone": "1234567890",
@@ -21,10 +21,52 @@ export let announcements = [
       "first_name": "Shreyas",
       "last_name": "Srinivasan ",
       "isAdmin": true,
-      "pfp": "../../public/shreyas_pfp.jpg",
+      "pfp": "./shreyas_pfp.jpg",
       "section": "T1",
       "email": "ssrinvasan@uci.edu",
       "phone": "2345678901",
     }
-  }
+  },
+  {
+    "announcement": `Hey Y'all here is just a reminder that we have ICCA's coming up and to make sure y'all take of your selves!`,
+    "created_at": "February 8th, 2023 11:10am",
+    "title": "ICCA BOYS!!",
+    "member": {
+      "first_name": "Shreyas",
+      "last_name": "Srinivasan ",
+      "isAdmin": true,
+      "pfp": "./shreyas_pfp.jpg",
+      "section": "T1",
+      "email": "ssrinvasan@uci.edu",
+      "phone": "2345678901",
+    }
+  },
+  {
+    "announcement": `Hey Y'all here is just a reminder that we have ICCA's coming up and to make sure y'all take of your selves!`,
+    "created_at": "February 8th, 2023 11:10am",
+    "title": "ICCA BOYS!!",
+    "member": {
+      "first_name": "Shreyas",
+      "last_name": "Srinivasan ",
+      "isAdmin": true,
+      "pfp": "./shreyas_pfp.jpg",
+      "section": "T1",
+      "email": "ssrinvasan@uci.edu",
+      "phone": "2345678901",
+    }
+  },
+  {
+    "announcement": `Hey Y'all here is just a reminder that we have ICCA's coming up and to make sure y'all take of your selves!`,
+    "created_at": "February 8th, 2023 11:10am",
+    "title": "ICCA BOYS!!",
+    "member": {
+      "first_name": "Shreyas",
+      "last_name": "Srinivasan ",
+      "isAdmin": true,
+      "pfp": "./shreyas_pfp.jpg",
+      "section": "T1",
+      "email": "ssrinvasan@uci.edu",
+      "phone": "2345678901",
+    }
+  },
 ]

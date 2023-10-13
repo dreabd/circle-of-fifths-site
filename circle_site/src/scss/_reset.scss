@@ -73,9 +73,7 @@ h6 {
   */
 #root,
 #__next {
-  isolation: isolate;
   height: 100%;
-
 }
 
 html,
@@ -83,4 +81,5 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+
 }
