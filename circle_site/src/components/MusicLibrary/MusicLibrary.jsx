@@ -4,7 +4,7 @@ import { musicLib } from "./exampleMusicLibrary"
 function MusicLibrary() {
 
     return (
-        <>
+        <div>
             <h1> Music Library</h1>
             <div>
                 {musicLib.map(music => {
@@ -16,7 +16,7 @@ function MusicLibrary() {
                     )
                 })}
             </div>
-        </>
+        </div>
     )
 }
 

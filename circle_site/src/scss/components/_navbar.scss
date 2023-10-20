@@ -19,7 +19,7 @@
     // Apply SlideOut animation when the navbar is Closed
     &.close {
         animation: $slideOut-animation;
-        left: -325px;
+        left: -100vw;
         position: absolute;
         height: 100%;
         animation-duration: 0.3s;
@@ -80,4 +80,10 @@
     .navlinks{
         font-size: $font-size-xlg;
     }
+}
+
+
+.navlinks>* {
+    color: $text-color;
+    text-decoration: none;
 }

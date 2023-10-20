@@ -1,23 +1,42 @@
 import parse from 'html-react-parser';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
+import Table from './PartDistributions';
 import { musicLib } from './exampleMusicLibrary';
-// const MyComponent = () => {
-//  const htmlString = '<div>A simple HTML string</div>';
-// return <div>{parse(htmlString)}</div>
-// }
 
 function MusicPiece() {
     const { id } = useParams()
     const piece = musicLib.find(music => music.id == id)
-    console.log(piece.name)
+    const htmlString = parse(piece.museScore)
 
-    const htmlString = parse(piece?.museScore)
+    const [display, setDisplay] = useState(true)
 
+
+    const toggleNav = () => {
+        setDisplay(!display);
+    };
     return (
-        <div style={{ width: "100%",height:"85%"}}>
-            <h1>{piece.name}</h1>
+        <div className="musicPiece" style={{ width: "90%", height: "85%" }}>
+            {/* Titile with name of pice */}
+            <span style={{ display: 'flex' }}>
+                <NavLink className='navlinks' navlinksexact to="/music">
+                    <h1>
+                        Music Library
+                    </h1>
+                </NavLink>
+                <h1> / {piece.name}</h1>
+            </span>
+            {/* Part Distributions */}
+            <div >
+                <button onClick={toggleNav}>
+                    Parts
+                </button>
+                {display && <Table data={piece.parts}/>}
+            </div>
+            {/* Downloadable PDF */}
+            {/* MuseScore Embedd */}
             {htmlString}
         </div>
 

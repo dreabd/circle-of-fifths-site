@@ -1,20 +1,25 @@
 .carousel {
-  @extend %center-component;
+  display: flex;
+  align-items: center;
   width: $partial-full-width;
+  height: $quarter-height;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
 
   .profile-img {
     @extend %image-dim;
-
   }
 
   .ax-slide {
-    padding: 2rem 2rem;
+    padding: 1rem 1rem;
     display: flex;
     background-color: $panel-color;
     gap: 1rem;
-    width: $half-width;
     border-radius: 40px;
-
+    min-width: 100%;
+    max-height: 75%;
   }
 
   .ax-slide:nth-child(1) {
@@ -46,8 +51,62 @@
   //   // font-size: $font-size-reg;
   // }
 
-  .bot-ax-info > p{
+  .bot-ax-info>p {
     display: flex;
     justify-content: flex-start;
   }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 40px; /* Set a fixed width and height to make it a circle */
+    height: 40px; /* Set a fixed width and height to make it a circle */
+    border-radius: 50%; /* Make it circular */    cursor: pointer;
+    z-index: 100;
+
+    &.arrow-left {
+      left: 0;
+    }
+
+    &.arrow-right {
+      right: 0;
+    }
+
+    i {
+      font-size: 24px;
+    }
+  }
+
+  .arrow:hover{
+    background-color: rgba(77, 77, 77, 0.5);
+
+  }
+
+  .carousel-indicator {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    bottom: 0;
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 0 5px;
+      cursor: pointer;
+
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+
 }

@@ -1,46 +1,63 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import { useState, useEffect } from 'react';
+import { announcements as data } from './exampleAnx';
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
-import { announcements } from './exampleAnx';
+import CarouselItem from "./CarouselItem"
+
 
 function AnnoucementsCarousel() {
+  const [currentIdx, setCurrentIdx] = useState(0)
+
+  const infScroll = () => {
+    if (currentIdx === data.length - 1) return setCurrentIdx(0)
+    return setCurrentIdx(currentIdx + 1)
+  }
+
+  const nextControl = (() => { setCurrentIdx(currentIdx === data.length - 1 ? 0 : currentIdx + 1) })
+  const prevControl = (() => { setCurrentIdx(currentIdx === 0 ? data.length - 1 : currentIdx - 1) }
+  )
+  // useEffect(() => {
+  //     const interval = setInterval(() => { infScroll() }, 3000)
+  //     return () => clearInterval(interval)
+  // }, [currentIdx])
+
+  console.log(data.length)
+  console.log(data[currentIdx].announcement)
   return (
-    <Carousel infiniteLoop="true" className='carousel'>
-      {announcements.map((announcement) => {
-        return (
-          <div className="ax-slide" key="slide1">
-            <div>
-              <img className="profile-img" src={announcement.member.pfp} />
-            </div>
-            <div className='ax-info-container'>
-              <div className='top-ax-info'>
-                <p>{announcement.title}</p>
-                <p>{announcement.created_at}</p>
-              </div>
-              <div className='bot-ax-info'>
-                <p >{announcement.announcement.slice(0, 200)}{announcement.announcement.length > 300 && "..."}</p>
+    <div className="carousel">
 
-              </div>
-            </div>
-          </div>
+      {/* Makes the carousel go left */}
+      <button
+        className="arrow arrow-left"
+        onClick={prevControl}
+      >
+        <i style={{ color: "white" }} className="fa-solid fa-chevron-left"></i>
+      </button>
 
-          //   <slide style={{ padding: "100%", height: 150, border:"1px solid red"}}>
-          //     <div>
-          //       {/* <img className="profile-img"src={announcement.member.pfp} alt="" /> */}
-          //     </div>
-          //     <div>
-          //       <p>{announcement.title}</p>
-          //       <p>{announcement.member.first_name}</p>
-          //     </div>
-          //   </slide>
-        )
-      })}
-    </Carousel>
+      {/* Carousel Items */}
+      {data.map((announcement, index) => <CarouselItem index={currentIdx} announcement={announcement} />)}
 
+      {/* Location of the Carousel */}
+      <div className="carousel-indicator">
+        {data.map((_, index) => (
+          <div
+            key={index}
+            className={`carousel-dot ${index === currentIdx ? 'active' : ''}`}
+          ></div>
+        ))}
+      </div>
+
+      {/* Makes the carousel go right */}
+
+      <button
+        onClick={nextControl}
+        className="arrow arrow-right"
+      >
+        <i style={{ color: "white" }} className="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
   )
 }
-
 
 export default AnnoucementsCarousel
