@@ -16,13 +16,11 @@ function MusicPiece() {
     const htmlString = parse(piece?.museScore)
 
     return (
-        <>
-            <div>
-                <h1>{piece.name}</h1>
-                {htmlString}
-            </div>
+        <div style={{ width: "100%",height:"85%"}}>
+            <h1>{piece.name}</h1>
+            {htmlString}
+        </div>
 
-        </>
     )
 }
 

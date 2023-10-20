@@ -7,7 +7,14 @@ export let musicLib = [
             "id": 1,
             "name": "Fall Ball 2022"
         },
-         "museScore": `<iframe width="100%" height="394" src="https://musescore.com/user/36441556/scores/11659312/s/Pukagy/embed" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>`
+        "parts":{
+            "T1":[{"name":"Andre"},{"name":"Andre"},{"name":"Andre"},],
+            "T2":[{"name":"Andre"},{"name":"Andre"},],
+            "T3":[{"name":"Andre"},{"name":"Andre"},],
+            "B1":[{"name":"Andre"},{"name":"Andre"},],
+            "Bs":[{"name":"Andre"},{"name":"Andre"},],
+        },
+         "museScore": `<iframe width="100%" height="100%" src="https://musescore.com/user/36441556/scores/11659312/s/Pukagy/embed" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>`
     },
     {
         "id": 2,
@@ -17,7 +24,13 @@ export let musicLib = [
             "id": 1,
             "name": "Fall Ball 2022 "
         },
-        "museScore": `<iframe width="100%" height="394" src="https://musescore.com/user/36441556/scores/11659255/s/Cy7KBb/embed" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>`
+        "parts":{
+            "T1":[{"name":"Andre"},{"name":"Andre"},{"name":"Andre"},],
+            "T2":[{"name":"Andre"},{"name":"Andre"},],
+            "T3":[{"name":"Andre"},{"name":"Andre"},],
+            "B1":[{"name":"Andre"},{"name":"Andre"},],
+            "Bs":[{"name":"Andre"},{"name":"Andre"},],
+        },
+        "museScore": `<iframe width="100%" height="100%" src="https://musescore.com/user/36441556/scores/11659255/s/Cy7KBb/embed" frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe>`
     },
 ]
-

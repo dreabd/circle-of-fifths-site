@@ -34,7 +34,8 @@
         background-color: $panel-color;
         color: $text-color;
         border-radius: $border-radius;
-        margin: 1vh 0rem;
+        margin: 3vh 0rem;
+        margin-left: 1rem;
         padding: 2vh 7vh;
         font-size: $font-size-lg;
     }
@@ -51,9 +52,10 @@
         @extend %center-component;
         margin-top: 1rem;
         align-items: baseline;
-        padding: 0px;
+        padding: 10px 1rem;
+        margin: 1rem 1rem;
         gap: 10px;
-        font-size: $font-size-reg;
+        overflow: hidden;
 
     }
 
@@ -74,8 +76,8 @@
 }
 
 
-@media (max-width:768) {
-    .user-container{
-        position: absolute;
-    }    
+@media (max-width:768px) {
+    .navlinks{
+        font-size: $font-size-xlg;
+    }
 }
